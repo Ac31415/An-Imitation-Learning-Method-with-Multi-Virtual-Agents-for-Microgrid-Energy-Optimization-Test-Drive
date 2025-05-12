@@ -8,6 +8,7 @@ clear,clc
 init
 tic
 N=50; %SOC discrete size; if SOC size=51, then N is 50
+% N=1000; %SOC discrete size; if SOC size=51, then N is 50
 delta=(s_u-s_l)/N;
 states=s_l:delta:s_u;
 SS{K}=0;
@@ -16,6 +17,7 @@ stateNum=1;
 stateK0=L0;
 costK0=0; %stateNum by 1;
 fault_time = [10 11 12 13]; % Interrupted time slots. You can change it to [11 12 13 14] or [12 13 14 15]. 
+% fault_time = [1 2 3 4]; % Interrupted time slots. You can change it to [11 12 13 14] or [12 13 14 15]. 
 % create interruption_status
 Interruption_status = zeros(24,1);
 time_slots = length(fault_time);
